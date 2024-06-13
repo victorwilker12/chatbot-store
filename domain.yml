@@ -1,0 +1,70 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - repeat_phone
+  - phone
+
+entities:
+  - number
+  - category
+slots:
+  phone:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: number
+  category:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: category
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_ask_phone:
+  - text: "Can i get your phone number please ?"
+  utter_store:
+  - text: "welcome to store VW"
+    buttons:
+      - title: "Smartphone"
+        payload: "Smartphone"
+      - title: "Women"
+        payload: "Women"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://bordalo.observador.pt/v2/q:84/c:770:433:nowe:0:0/rs:fill:980/f:webp/plain/https://s3.observador.pt/wp-content/uploads/2016/09/29124952/meme_770x433_acf_cropped.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_list_product:
+    - text: "welcome to store , which product category ??"
+
+actions:
+  - action_say_phone
+  - action_categories_products
+  - action_get_product
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+

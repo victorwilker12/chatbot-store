@@ -1,0 +1,64 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Olá
+      - Ola
+      - Oi
+      - Olá!
+      - Bom dia
+      - Boa tarde
+      - Boa Tarde
+      - Oi, tudo bem?
+      - Olá
+      - Bom dia, Homero.
+      - Boa tarde, Homero.
+      - Boa Noite Homero.
+      - E ai Homero.
+      - Como você está Homero.
+
+  - intent: goodbye
+    examples: |
+      - Tchau
+      - Até mais
+      - Até depois
+      - Té
+
+  - intent: deny
+    examples: |
+      - não, obrigado
+      - não
+      - Não
+      - claro que não
+      - com certeza não
+      - n
+      - não desejo
+      - não quero
+      - cancelar
+
+  - intent: confirm
+    examples: |
+      - Sim, obrigado
+      - Sim, por favor
+      - sim
+      - SIM
+      - claro que sim
+      - com certeza
+      - ss
+      - Desejo sim
+      - claro
+      - ok
+      - De boas
+      - Estou satisfeito sim
+      - Gostei sim
+  - intent: phone
+    examples: | 
+      - [1223344599](number)
+      - This is my phone number [1223344599](number)
+      - here you go [1223344599](number)
+      - my phone number is [88999232348](number)
+  - intent: repeat_number
+    examples: | 
+      - whats my phone number 
+      - my phone number is ?
